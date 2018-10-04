@@ -2,7 +2,7 @@
 
 if ARGV == []
   puts
-  puts "Usage: #{$0} file or directory..."
+  puts "Usage: path-install file or directory..."
   puts
   puts "$ path-install /usr/local/ruby2.5.1/bin | tee -a ~/.bash_profile"
   puts "export PATH=/usr/local/ruby2.5.1/bin:$PATH"
