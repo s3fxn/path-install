@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+if ARGV == []
+  puts
+  puts "Usage: #{$0} file or directory..."
+  puts
+  puts "$ path-install /usr/local/ruby2.5.1/bin | tee -a ~/.bash_profile"
+  puts "export PATH=/usr/local/ruby2.5.1/bin:$PATH"
+  puts
+  puts "$ path-install /usr/local/ruby2.5.1/bin/ruby | sudo tee -a /etc/profile.d/ruby.sh"
+  puts "test -x /usr/local/ruby2.5.1/bin/ruby && \\"
+  puts "export PATH=/usr/local/ruby2.5.1/bin:$PATH"
+  puts
+  exit 1
+end
+
+ARGV.each {|path|
+  if FileTest.directory? path
+    path = File.expand_path('.', path)
+    puts "export PATH=#{path}:\$PATH"
+
+  elsif FileTest.file? path and FileTest.executable? path
+    file = File.expand_path('.', path)
+    path = File.dirname(path)  
+    puts "test -x #{file} && \\"
+    puts "export PATH=#{path}:\$PATH"
+
+  else
+    puts "# skip: #{path}"
+  end
+}
+
