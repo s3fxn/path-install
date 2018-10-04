@@ -22,7 +22,7 @@ export PATH=/usr/local/ruby2.5.1/bin:$PATH
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/path-install.
+Bug reports and pull requests are welcome on GitHub at https://github.com/s3fxn/path-install.
 
 ## License
 
