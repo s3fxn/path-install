@@ -5,6 +5,7 @@ path-install can help you adding a new PATH to .bash_profile and /etc/profile.d/
 ## Installation
 
     $ gem install path-install
+    (you may need to run as root or through sudo.)
 
 ## Usage
 
